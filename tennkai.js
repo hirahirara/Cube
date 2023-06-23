@@ -411,5 +411,9 @@ function loop ()
     window.requestAnimationFrame(loop);
 }
 
-init();
-loop();
+img.onload = function ()
+{
+    init();
+    loop();
+}
+
