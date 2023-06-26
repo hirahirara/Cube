@@ -1,4 +1,3 @@
-/////////////////////////////////////////////////プレイヤーの操作
 document.addEventListener('keydown', e => {
     if(e.key === 'a'){
         if(!gameSituation.goal)
@@ -94,23 +93,3 @@ document.addEventListener('keydown', e =>
         imageTutorial.showOrClose();
     }
 })
-
-/*
-document.addEventListener('keydown', e => {
-    if(e.key === 's'){
-        player.dy = player.speed;
-    }
-})
-
-document.addEventListener('keyup', e => {
-    if(e.key === 's'){
-        player.dy = 0;
-    }
-})
-
-document.addEventListener('keyup', e => {
-    if(e.key === 'w'){
-        player.dy = 0;       
-    }
-})
-*/
