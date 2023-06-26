@@ -87,7 +87,7 @@ document.addEventListener('keydown', e =>
     }
     else if(e.key === 'v')
     {
-        init();
+        if(!gameSituation.openMovie) init();
     }
     else if(e.key === 'Escape')
     {

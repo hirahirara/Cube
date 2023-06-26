@@ -1,4 +1,4 @@
-class stageBlock
+class StageBlock
 {
     normal = [];
     abNormal2 = [];
@@ -57,28 +57,24 @@ class stageBlock
 
     updateImage (array)
     {
-        array.forEach(element =>
-            {            
-                if(!gameSituation.openMovie) element.image();        
-            });
+        if(gameSituation.openMovie) return;
+        for(let i = 0; i < array.length; i++) array[i].image(); 
     }
 
     updateSub1 (array)
     {
-        array.forEach(element =>
-        {            
-            if(collision(player, element))
-            collisionObject.divisionNormal(player, element);       
-        });
+        for(let i = 0; i < array.length; i++)
+        {
+            if(collision(player, array[i])) collisionObject.divisionNormal(player, array[i]); 
+        }           
     }
 
     updateSub2 (array)
     {
-        array.forEach(element =>
+        for(let i = 0; i < array.length; i++)
         {
-            if(collision(player, element))
-            collisionObject.divisionDiagonal(player, element);       
-        });
+            if(collision(player, array[i])) collisionObject.divisionDiagonal(player, array[i]); 
+        } 
     }
 
     blockUpdate ()
@@ -113,7 +109,7 @@ class stageBlock
     }
 }
 
-class stage extends stageBlock
+class Stage extends StageBlock
 {
     map = [[[]]];
     net = [[[]]];
@@ -785,8 +781,8 @@ class stage extends stageBlock
 
 let stages = [];
 
-//0
-stages.push(new stage());
+//stage1
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 1;
 stages[stages.length-1].goalWay = 2;
 stages[stages.length-1].plX = 1;
@@ -871,8 +867,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//0
-stages.push(new stage());
+//stage2
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 1;
 stages[stages.length-1].goalWay = 3;
 stages[stages.length-1].plX = 1;
@@ -962,8 +958,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//0
-stages.push(new stage());
+//stage3
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 4;
 stages[stages.length-1].goalWay = 3;
 stages[stages.length-1].plX = 1;
@@ -1054,8 +1050,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//3
-stages.push(new stage());
+//stage4
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 5;
 stages[stages.length-1].goalWay = 3;
 stages[stages.length-1].plX = 7;
@@ -1144,8 +1140,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//4
-stages.push(new stage());
+//stage5
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 0;
 stages[stages.length-1].goalWay = 3;
 stages[stages.length-1].plX = 7;
@@ -1236,8 +1232,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//2
-stages.push(new stage());
+//stage6
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 3;
 stages[stages.length-1].goalWay = 2;
 stages[stages.length-1].plX = 7;
@@ -1327,8 +1323,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//7
-stages.push(new stage());
+//stage7
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 2;
 stages[stages.length-1].goalWay = 0;
 stages[stages.length-1].plX = 7;
@@ -1417,8 +1413,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//8
-stages.push(new stage());
+//stage8
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 5;
 stages[stages.length-1].goalWay = 2;
 stages[stages.length-1].plX = 8;
@@ -1524,8 +1520,8 @@ stages[stages.length-1].net =
     ],
 ];
 
-//2
-stages.push(new stage());
+//stage9
+stages.push(new Stage());
 stages[stages.length-1].goalFace = 0;
 stages[stages.length-1].goalWay = 0;
 stages[stages.length-1].plX = 4;
